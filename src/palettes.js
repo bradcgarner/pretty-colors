@@ -1,3 +1,5 @@
+'use strict';
+
 const { isPrimitiveNumber } = require('conjunction-junction');
 
 /* This creates pre-set color palettes.
@@ -19,7 +21,7 @@ const { isPrimitiveNumber } = require('conjunction-junction');
  * POLYCHROMATIC RANDOM ACCESS
  * namedColors returns an object with semantic keys for the colors in palette23.
  */
-export const general14 = () => ([
+const general14 = () => ([
   '236,  83, 158', //  0 orange-red
   ' 30, 132, 197', //  1 middle blue
   '254, 127,  32', //  2 deep-orange
@@ -37,7 +39,7 @@ export const general14 = () => ([
   '  0, 153,  51', // 14 not happy with this yet
 ]);
 
-export const createBright7 = option => {
+const createBright7 = option => {
   // default returns object to use to mutate 7 palettes
   if(option === 'array'){
     return [
@@ -62,7 +64,7 @@ export const createBright7 = option => {
   }
 };
 
-export const addBright = (arr, key, pos) => {
+const addBright = (arr, key, pos) => {
   // this MUTATES arr ! (seems the most efficient solution in this limited scope and size)
   const bright7 = createBright7();
   if(pos < 0){
@@ -74,12 +76,12 @@ export const addBright = (arr, key, pos) => {
   }
 };
 
-export const addBrights = arr => {
+const addBrights = arr => {
   const bright7 = createBright7('array');
   return [...bright7, ...arr];
 };
 
-export const createBark8 = pos => {
+const createBark8 = pos => {
   const arr = [
     '246, 189, 111',
     '227, 163,  79',
@@ -96,7 +98,7 @@ export const createBark8 = pos => {
   return arr;
 };
 
-export const createFern8 = pos => {
+const createFern8 = pos => {
   const arr = [
     '128, 248, 109',
     ' 99, 224,  79',
@@ -113,7 +115,7 @@ export const createFern8 = pos => {
   return arr;
 };
 
-export const createCorn8 = pos => {
+const createCorn8 = pos => {
   const arr = [
     '227, 243,  92',
     '220, 233,  49',
@@ -130,7 +132,7 @@ export const createCorn8 = pos => {
   return arr;
 };
 
-export const createPeach8 = pos => {
+const createPeach8 = pos => {
   const arr = [
     '245, 167, 143',
     '234, 138, 110',
@@ -147,7 +149,7 @@ export const createPeach8 = pos => {
   return arr;
 };
 
-export const createWine8 = pos => {
+const createWine8 = pos => {
   const arr = [
     '243, 158, 162',
     '227, 124, 131',
@@ -164,7 +166,7 @@ export const createWine8 = pos => {
   return arr;
 };
 
-export const createEggplant8 = pos => {
+const createEggplant8 = pos => {
   const arr = [
     '227, 146, 247',
     '206, 114, 225',
@@ -181,7 +183,7 @@ export const createEggplant8 = pos => {
   return arr;
 };
 
-export const createSky8 = pos => {
+const createSky8 = pos => {
   const arr = [
     '189, 209, 245',
     '155, 180, 223',
@@ -198,7 +200,7 @@ export const createSky8 = pos => {
   return arr;
 };
 
-export const createMonoChrome = option => {
+const createMonoChrome = option => {
   if(option ==='green'){
     return createFern8(-1);
   } else if(option ==='yellow'){
@@ -218,7 +220,7 @@ export const createMonoChrome = option => {
   }
 };
 
-export const listBright = () => {
+const listBright = () => {
   return [
     'green',
     'yellow',
@@ -230,7 +232,7 @@ export const listBright = () => {
   ];
 };
 
-export const createPalette11 = option => {
+const createPalette11 = option => {
   const white     = '255 255 255';
   const bark8     = createBark8();
   const fern8     = createFern8();
@@ -261,7 +263,7 @@ export const createPalette11 = option => {
   return arr;
 };
 
-export const createPalette13 = option => {
+const createPalette13 = option => {
   const white     = '255 255 255';
   const bark8     = createBark8();
   const fern8     = createFern8();
@@ -293,7 +295,7 @@ export const createPalette13 = option => {
   return arr;
 };
 
-export const createPalette16 = option => {
+const createPalette16 = option => {
   const white     = '255 255 255';
   const bark8     = createBark8();
   const fern8     = createFern8();
@@ -328,7 +330,7 @@ export const createPalette16 = option => {
   return arr;
 };
 
-export const createPalette19 = option => {
+const createPalette19 = option => {
   const white     = '255 255 255';
   const bark8     = createBark8();
   const fern8     = createFern8();
@@ -366,7 +368,7 @@ export const createPalette19 = option => {
   return arr;
 };
 
-export const createPalette23 = option => {
+const createPalette23 = option => {
   const white     = '255 255 255';
   const bark8     = createBark8();
   const fern8     = createFern8();
@@ -408,7 +410,7 @@ export const createPalette23 = option => {
   return arr;
 };
 
-export const selectPalette = (num, option) => {
+const selectPalette = (num, option) => {
   if(!isPrimitiveNumber(num)){
     return createPalette23(option);
   } else if (num <= 11) {
@@ -424,7 +426,7 @@ export const selectPalette = (num, option) => {
   }
 };
 
-export const createNamed = option => {
+const createNamed = option => {
   const white     = '255 255 255';
   const bark8     = createBark8();
   const fern8     = createFern8();
@@ -475,7 +477,7 @@ export const createNamed = option => {
   return namedColors;
 };
 
-export const createPreSetGlobalPalettes = () => {
+const createPreSetGlobalPalettes = () => {
   const colors = listBright();
   const preSetGlobalPalettes = {};
   colors.forEach(color=>{
@@ -484,26 +486,26 @@ export const createPreSetGlobalPalettes = () => {
   return preSetGlobalPalettes;
 };
 
-// export default {
-//   general14,
-//   createBright7,
-//   addBright,
-//   addBrights,
-//   createBark8,
-//   createFern8,
-//   createCorn8,
-//   createPeach8,
-//   createWine8,
-//   createEggplant8,
-//   createSky8,
-//   createMonoChrome,
-//   listBright,
-//   createPalette11,
-//   createPalette13,
-//   createPalette16,
-//   createPalette19,
-//   createPalette23,
-//   selectPalette,
-//   createNamed,
-//   createPreSetGlobalPalettes,
-// };
+module.exports = {
+  general14,
+  createBright7,
+  addBright,
+  addBrights,
+  createBark8,
+  createFern8,
+  createCorn8,
+  createPeach8,
+  createWine8,
+  createEggplant8,
+  createSky8,
+  createMonoChrome,
+  listBright,
+  createPalette11,
+  createPalette13,
+  createPalette16,
+  createPalette19,
+  createPalette23,
+  selectPalette,
+  createNamed,
+  createPreSetGlobalPalettes,
+};
