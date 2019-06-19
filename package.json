@@ -3,9 +3,11 @@
   "version": "0.0.0",
   "description": "Library to create nice default color palettes",
   "main": "index.js",
-  "scripts": {
-    "test": "nyc mocha --colors  tests/*.test.js",
-    "build": "babel src -d build"
+  "author": "Brad C. Garner <brad@bradgarner.com> (http://bradgarner.com)",
+  "license": "MIT",
+  "homepage": "https://github.com/bradcgarner/pretty-colors#readme",
+  "bugs": {
+    "url": "https://github.com/bradcgarner/pretty-colors/issues"
   },
   "repository": {
     "type": "git",
@@ -14,20 +16,18 @@
   "keywords": [
     "front-end"
   ],
-  "author": "Brad C. Garner <brad@bradgarner.com> (http://bradgarner.com)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/bradcgarner/pretty-colors/issues"
+  "scripts": {
+    "test": "nyc mocha --colors  tests/*.test.js",
+    "build": "babel src -d build"
   },
-  "homepage": "https://github.com/bradcgarner/pretty-colors#readme",
-  "devDependencies": {
+  "directories": {
+    "test": "tests"
+  },
+ "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.1.2",
     "mocha": "^6.1.4",
     "nyc": "^14.1.1"
-  },
-  "directories": {
-    "test": "tests"
   }
 }
