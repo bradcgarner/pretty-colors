@@ -1,6 +1,6 @@
 {
   "name": "pretty-colors",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Library to create nice default color palettes",
   "main": "index.js",
   "author": "Brad C. Garner <brad@bradgarner.com> (http://bradgarner.com)",
@@ -23,7 +23,7 @@
   "directories": {
     "test": "tests"
   },
- "devDependencies": {
+  "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.1.2",
